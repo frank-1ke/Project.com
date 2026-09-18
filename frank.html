@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+   <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="screen active">
+            <div class="welcome-box">
+                <h1>🏦 Bank System</h1>
+                <p>Welcome to Simple Banking</p>
+                <button onclick="showLoginScreen()" class="btn btn-primary">Login</button>
+                <button onclick="showSignUpScreen()" class="btn btn-secondary">Create Account</button>
+            </div>
+        </div>
+
+        <!-- Login Screen -->
+        <div id="loginScreen" class="screen">
+            <div class="form-box">
+                <h2>Login</h2>
+                <input type="text" id="loginUsername" placeholder="Enter Username" class="input-field">
+                <
+                <button onclick="login()" class="btn btn-primary">Login</button>
+                <button onclick="showWelcomeScreen()" class="btn btn-secondary">Back</button>
+                <p id="loginError" class="error-message"></p>
+            </div>
+        </div>
+
+        <!-- Sign Up Screen -->
+        <div id="signUpScreen" class="screen">
+            <div class="form-box">
+                <h2>Create Account</h2>
+                <input type="text" id="signupName" placeholder="Full Name" class="input-field">
+                <input type="text" id="signupUsername" placeholder="Create Username" class="input-field">
+               
+                <input type="number" id="signupInitialBalance" placeholder="Initial Balance" class="input-field" min="0">
+                <button onclick="signup()" class="btn btn-primary">Create Account</button>
+                <button onclick="showWelcomeScreen()" class="btn btn-secondary">Back</button>
+                <p id="signupError" class="error-message"></p>
+            </div>
+        </div>
+
+        <!-- Dashboard Screen -->
+        <div id="dashboardScreen" class="screen">
+            <div class="dashboard-container">
+                <!-- Header -->
+                <div class="dashboard-header">
+                    <div>
+                        <h2>Welcome, <span id="userName"></span></h2>
+                        <p>Account Number: <span id="accountNumber"></span></p>
+                    </div>
+                    <button onclick="logout()" class="btn btn-danger">Logout</button>
+                </div>
+
+                <!-- Balance Card -->
+                <div class="balance-card">
+                    <p>Current Balance</p>
+                    <h1>$<span id="balance">0</span></h1>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button onclick="showDepositScreen()" class="btn btn-success">Deposit</button>
+                    <button onclick="showWithdrawScreen()" class="btn btn-warning">Withdraw</button>
+                    <button onclick="showTransferScreen()" class="btn btn-info">Transfer</button>
+                </div>
+
+                <!-- Transaction History -->
+                <div class="transaction-history">
+                    <h3>Transaction History</h3>
+                    <div id="transactionList" class="transaction-list">
+                        <p class="no-transactions">No transactions yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deposit Screen -->
+        <div id="depositScreen" class="screen">
+            <div class="form-box">
+                <h2>Deposit Money</h2>
+                <input type="number" id="depositAmount" placeholder="Enter Amount" class="input-field" min="0">
+                <button onclick="processDeposit()" class="btn btn-primary">Deposit</button>
+                <button onclick="showDashboard()" class="btn btn-secondary">Back</button>
+                <p id="depositError" class="error-message"></p>
+            </div>
+        </div>
+
+        <!-- Withdraw Screen -->
+        <div id="withdrawScreen" class="screen">
+            <div class="form-box">
+                <h2>Withdraw Money</h2>
+                <input type="number" id="withdrawAmount" placeholder="Enter Amount" class="input-field" min="0">
+                <button onclick="processWithdraw()" class="btn btn-primary">Withdraw</button>
+                <button onclick="showDashboard()" class="btn btn-secondary">Back</button>
+                <p id="withdrawError" class="error-message"></p>
+            </div>
+        </div>
+
+        <!-- Transfer Screen -->
+        <div id="transferScreen" class="screen">
+            <div class="form-box">
+                <h2>Transfer Money</h2>
+                <input type="text" id="transferUsername" placeholder="Recipient Username" class="input-field">
+                <input type="number" id="transferAmount" placeholder="Enter Amount" class="input-field" min="0">
+                <button onclick="processTransfer()" class="btn btn-primary">Transfer</button>
+                <button onclick="showDashboard()" class="btn btn-secondary">Back</button>
+                <p id="transferError" class="error-message"></p>
+            </div>
+        </div>
+    </div>
+
+<script src="frank.js"></script>
+</body>
+</html>

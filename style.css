@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    min-height: 500px;
+}
+
+/* Screen Management */
+.screen {
+    display: none;
+    padding: 40px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Welcome Screen */
+.welcome-box {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.welcome-box h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-box p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Form Box */
+.form-box {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-box h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.2);
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.btn-success:hover {
+    background: #218838;
+}
+
+.btn-warning {
+    background: #ffc107;
+    color: #333;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.btn-warning:hover {
+    background: #e0a800;
+}
+
+.btn-info {
+    background: #17a2b8;
+    color: white;
+    flex: 1;
+}
+
+.btn-info:hover {
+    background: #138496;
+}
+
+/* Error Message */
+.error-message {
+    color: #dc3545;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Dashboard */
+.dashboard-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+.dashboard-header h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+.dashboard-header p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.dashboard-header .btn {
+    width: auto;
+    padding: 8px 20px;
+    margin: 0;
+}
+
+/* Balance Card */
+.balance-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.balance-card p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.balance-card h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.action-buttons .btn {
+    margin-bottom: 0;
+    padding: 12px;
+}
+
+/* Transaction History */
+.transaction-history {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.transaction-history h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.transaction-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.transaction-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-item.deposit {
+    border-left-color: #28a745;
+}
+
+.transaction-item.withdraw {
+    border-left-color: #ffc107;
+}
+
+.transaction-item.transfer {
+    border-left-color: #17a2b8;
+}
+
+.transaction-item .type {
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+}
+
+.transaction-item .amount {
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.transaction-item .deposit .amount {
+    color: #28a745;
+}
+
+.transaction-item .withdraw .amount,
+.transaction-item .transfer .amount {
+    color: #dc3545;
+}
+
+.transaction-item .date {
+    color: #999;
+    font-size: 12px;
+    text-align: right;
+}
+
+.no-transactions {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .screen {
+        padding: 20px;
+    }
+
+    .welcome-box h1 {
+        font-size: 36px;
+    }
+
+    .balance-card h1 {
+        font-size: 36px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons .btn {
+        margin-right: 0;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-header .btn {
+        width: 100%;
+        margin-top: 15px;
+    }
+}
